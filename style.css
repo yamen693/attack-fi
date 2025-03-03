@@ -1,0 +1,236 @@
+.hidden {
+    display: none;
+}
+header {
+    position: fixed; /* Keep the header fixed at the top */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    z-index: 10; /* Ensure it is above other content */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for visibility */
+  }
+body {
+    background-color: #f8f9fa; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    color: #333; /* Text color */
+    padding-top: 80px; /* Adjust this value based on the height of your header */
+}
+h1 {
+    font-size: 1.5rem; /* Adjust the size as needed */
+  }
+  .small-heading {
+    font-size: 1.5rem; /* Adjust the size as needed */
+  }
+body {
+    background-color: #f8f9fa; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    color: #333; /* Text color */
+}.navbar {
+    background-color: #007bff; /* Primary color for navbar */
+    padding: 15px; /* Padding for navbar */
+}
+.navbar-brand {
+    color: #fff; /* Logo text color */
+}
+.nav-link {
+    color: #fff; /* Link color */
+}
+.nav-link:hover {
+    color: #ffc107; /* Hover color for links */
+}.navbar {
+    background-color: #007bff; /* Primary color for navbar */
+    padding: 15px; /* Padding for navbar */
+}
+.navbar-brand {
+    color: #fff; /* Logo text color */
+}
+.nav-link {
+    color: #fff; /* Link color */
+}
+.nav-link:hover {
+    color: #ffc107; /* Hover color for links */
+}
+#language-menu {
+    border: 1px solid #ccc;
+    background-color: white;
+    position: absolute; /* Ensure it appears below the button */
+    z-index: 1000; /* Make sure it appears above other elements */
+}
+.s_banner {
+    background-size: cover; /* Cover the entire section */
+    color: #fff; /* Text color for banner */
+    text-align: center; /* Center text */
+}.s_banner {
+    background-size: cover; /* Cover the entire section */
+    color: #fff; /* Text color for banner */
+    text-align: center; /* Center text */
+}.btn-primary {
+    background-color: #28a745; /* Green background */
+    border: none; /* No border */
+}
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+}.btn-primary {
+    background-color: #28a745; /* Green background */
+    border: none; /* No border */
+}
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+}.card {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.card-title {
+    font-weight: bold; /* Bold title */
+}.card {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.card-title {
+    font-weight: bold; /* Bold title */
+}footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Padding for footer */
+}
+footer a {
+    color: #ffc107; /* Link color in footer */
+}footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Padding for footer */
+}
+footer a {
+    color: #ffc107; /* Link color in footer */
+}.program-card {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.program-card:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background on hover */
+    color: white; /* Change text color to white */
+}
+.text-responsive {
+    font-size: 1.5rem; /* Default size for mobile */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+/* Loading Screen Styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it is on top */
+  }
+  
+  .loading-logo {
+    width: 150px; /* Adjust size as needed */
+  }
+  
+  /* Intro Screen Styles */
+  .intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998; /* Below loading screen */
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .intro-logo {
+    width: 150px; /* Adjust size as needed */
+  }
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items on small screens */
+    }
+    .s_banner {
+        min-height: 400px; /* Adjust banner height for mobile */
+    }
+}@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items on small screens */
+    }
+    .s_banner {
+        min-height: 400px; /* Adjust banner height for mobile */
+    }
+}@media (max-width: 640px) {
+  .text-2xl {
+    font-size: 1.5rem; /* Adjust size for mobile if necessary */
+  }
+}
+/* Adjust font size for larger screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .text-responsive {
+        font-size: 2rem; /* Increase size for tablets */
+    }
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 1025px) {
+    .text-responsive {
+        font-size: 2.5rem; /* Increase size for laptops */
+    }
+}
+/* Adjust font size for tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text-responsive {
+        font-size: 2rem; /* Increase size for tablets */
+        text-align: center; /* Center the text */
+    }
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 1025px) {
+    .text-responsive {
+        font-size: 2.5rem; /* Increase size for laptops */
+    }
+}
+/* Adjust font size for smaller mobile devices (300px to 639px) */
+@media (min-width: 300px) and (max-width: 639px) {
+    .text-responsive {
+        font-size: 1.2rem; /* Smaller size for very small screens */
+        text-align: center; /* Center the text */
+    }
+}
+
+/* Adjust font size for tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .text-responsive {
+        font-size: 2rem; /* Increase size for tablets */
+        text-align: center; /* Center the text */
+    }
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 1025px) {
+    .text-responsive {
+        font-size: 2.5rem; /* Increase size for laptops */
+    }
+}
+@media (max-width: 299px) {
+    body {
+        padding-top: 40px; /* Adjust padding for smaller screens */
+    }
+    .navbar {
+        padding: 10px; /* Reduce padding for navbar */
+    }
+    .s_banner {
+        min-height: 200px; /* Adjust banner height for very small screens */
+    }
+    .text-responsive {
+        font-size: 1rem; /* Smaller font size for very small screens */
+    }
+}
