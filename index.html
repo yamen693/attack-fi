@@ -12,6 +12,27 @@
    
   
     <style>
+          /* Mobile menu styles */
+    #mobile-menu {
+        position: absolute;
+        top: 100%;
+        right: 10px; /* Adds spacing from the right */
+        width: 80%; /* Adjust width for a smaller size */
+        max-width: 250px; /* Limit max width */
+        background: linear-gradient(to bottom, black, rgb(232,181,70));
+        border-radius: 10px;
+        padding: 10px;
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    #mobile-menu.open {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
         #lp{
             background-size: contain;
         }
@@ -287,7 +308,7 @@
         <div class="container mx-auto text-center transition-text">
             <p class="transition-text hover:text-white">© 2024 Attack Academy. All rights reserved.</p>
             <div class="mt-4">
-                <p class="text-black">Coaches: To apply for a job click <a class="hover:text-white transition-colors duration-300 ease-in-out border-b border-black" href="https://wa.me/201128043787">here</a></p>
+                <p class="text-black">Coaches: To apply for a job click <a class="hover:text-white transition-colors duration-300 ease-in-out border-b border-black" href="https://wa.me/201128043787">here</a> or for telphon <a class="hover:text-white transition-colors duration-300 ease-in-out border-b border-black" href="tel:01128043787">here</a></p>
             </div>
             <div class="flex justify-center space-x-4 mt-4">
                 <a class="text-black hover:text-white transition-colors duration-300 ease-in-out" href="https://www.facebook.com/share/15kEBiVWmL/" target="_blank">
@@ -330,6 +351,20 @@
             setTimeout(function() {
                 document.getElementById('intro').classList.add('hidden');
             }, 3000);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+    
+            mobileMenuButton.addEventListener("click", function () {
+                if (mobileMenu.classList.contains("open")) {
+                    mobileMenu.style.display = "none"; // Hide when closing
+                    setTimeout(() => mobileMenu.classList.remove("open"), 300);
+                } else {
+                    mobileMenu.style.display = "block"; // Show before animation
+                    setTimeout(() => mobileMenu.classList.add("open"), 10);
+                }
+            });
         });
     </script>
     <script src="./index.js"></script>
