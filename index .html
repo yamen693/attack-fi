@@ -11,6 +11,27 @@
 
   
     <style>
+               /* Mobile menu styles */
+    #mobile-menu {
+        position: absolute;
+        top: 100%;
+        right: 10px; /* Adds spacing from the right */
+        width: 80%; /* Adjust width for a smaller size */
+        max-width: 250px; /* Limit max width */
+        background: linear-gradient(to bottom, black, rgb(232,181,70));
+        border-radius: 10px;
+        padding: 10px;
+        display: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    #mobile-menu.open {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
         @keyframes magicIn {
             0% {
                 opacity: 0;
@@ -148,7 +169,7 @@
     <div class="md:hidden bg-white shadow-md hidden" id="mobile-menu">
         <ul class="flex flex-col space-y-2 p-4">
             <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
+                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
             </li>
             <li>
                 <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
@@ -316,6 +337,20 @@
             setTimeout(function() {
                 document.getElementById('intro').classList.add('hidden');
             }, 3000);
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+    
+            mobileMenuButton.addEventListener("click", function () {
+                if (mobileMenu.classList.contains("open")) {
+                    mobileMenu.style.display = "none"; // Hide when closing
+                    setTimeout(() => mobileMenu.classList.remove("open"), 300);
+                } else {
+                    mobileMenu.style.display = "block"; // Show before animation
+                    setTimeout(() => mobileMenu.classList.add("open"), 10);
+                }
+            });
         });
     </script>
     <script src="./index.js"></script>
