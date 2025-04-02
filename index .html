@@ -97,6 +97,20 @@
     border-radius: 6px;
     border: 3px solid black;
 }
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 10s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
     </style>
 </head>
 <body class="bg-off-white">
@@ -105,11 +119,11 @@
         <img alt="Attack Academy Logo" class="intro-logo" height="48" src="./attack (1).png" width="48"/>
     </div>
     <!-- News Ticker -->
-    <div class="bg-gradient-to-r from-black via-[rgb(232,181,70)] to-[rgb(232,181,70)]text-white py-2 text-center">
-        <marquee behavior="scroll" direction="left">
-            مرحبا بكم في أكاديمية أتاك لكرة القدم! التسجيل للموسم الجديد مفتوح الآن. انضم إلينا لتطوير مهاراتك وحبك للعبة!
-        </marquee>
-       </div>
+    <div class="bg-gradient-to-r from-[rgb(232,181,70)] to-[rgb(0,0,0)] to-[rgb(232,181,70)] text-white py-2 text-center">
+        <h1 class="marquee">
+          Ramdan offer <span style="color: rgb(255, 0, 0);">70%</span> OFF
+        </h1>
+      </div>
    <!-- Header -->
    <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
     <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
@@ -178,19 +192,19 @@
                 <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
             </li>
             <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
+                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
             </li>
             <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
+                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
             </li>
             <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
+                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
             </li>
             <li class="mr-4">
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
+                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
             </li>
             <li>
-                <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
             </li>
         </ul>
     </div>
@@ -216,13 +230,13 @@
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in"> رؤيتنا</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Vision image showing a football field with a clear sky" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/no3WaNQVEYZ3J5YKCpdZpqJmzWLt34xGzcyEetmegSVRZHHUA.jpg" width="384"/>
+                    <img alt="Vision image showing a football field with a clear sky" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_9149-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         أن نصبح نموذجًا رياديًا في تطوير لاعبي كرة القدم الشباب على المستوى المحلي والإقليمي، من خلال توفير بيئة تعليمية ورياضية متكاملة تُعزز من مهاراتهم البدنية والفنية والعقلية، مع غرس قيم الروح الرياضية والانضباط والاحترافية، لتخريج لاعبين قادرين على تحقيق النجاح داخل وخارج الملعب.
                     </p>
                 </div>
                 <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Vision image showing a group of young football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/etuLKDfNBAkBK0vapoQ17gXWdwlt7kwIo35Ojiz02SCDZHHUA.jpg" width="384"/>
+                    <img alt="Vision image showing a group of young football players in action" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_9171-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         مكونات هذه الرؤية:
                         ۱- التطوير الشامل: التركيز على الجوانب الفنية، البدنية، والعقلية للاعبين. 
@@ -239,13 +253,13 @@
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">مهمتنا</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Mission image showing a coach instructing young players" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/LsWzMNaWzEKlC9ZDbQeYkmod0fdHbGNkkp2fgyvknQuVyOOoA.jpg" width="384"/>
+                    <img alt="Mission image showing a coach instructing young players" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8947-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         مهمتنا هي تقديم برامج تدريبية عالية الجودة تركز على التطوير البدني والفني والنفسي والتكتيكي للاعبينا.
                     </p>
                 </div>
                 <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Mission image showing young players celebrating a goal" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/4BkHeniIeffeXhW2bEdetMs4xs6rGK2dfYbMCzUXi2QgisjDKA.jpg" width="384"/>
+                    <img alt="Mission image showing young players celebrating a goal" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_9130-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         نحن نسعى جاهدين لغرس قيم العمل الجماعي والانضباط والروح الرياضية في لاعبينا، وإعدادهم للنجاح داخل وخارج الملعب.
                     </p>
@@ -258,7 +272,7 @@
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">Our Programs</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Young football players practicing basic skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/IM2BoHb5LsLlHVfkjskMrkak5wwkcreX4zewTkLtWgPNyOOoA.jpg" width="384"/>
+                    <img alt="Young football players practicing basic skills" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8962-Enhanced-NR.jpg" width="384"/>
                     <h3 class="card-title" style="text-bold">
                         البرامج التدريبية للمهارات الفنية</h3>
                         <br>
@@ -266,7 +280,7 @@
                     <!-- <p class="price">$100/month</p> -->
                 </div>
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Intermediate football players improving their skills" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/FaWyz9d7rWobNZDZcCnNztbd2DFtTbAjq8cQfDagarmlsjDKA.jpg" width="384"/>
+                    <img alt="Intermediate football players improving their skills" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8968-Enhanced-NR.jpg" width="384"/>
                     <h3 class="card-title"> البرامج المخصصة للتطوير البدني</h3>
                     <br>
                     <p>لا يقتصر التدريب على المهارات الفنية فقط، بل يشمل أيضًا إعداد اللاعبين بدنيًا لتحمل الضغوط والمجهود البدني أثناء المباريات. يشمل ذلك تدريبات اللياقة البدنية، القوة العضلية، والتوازن والمرونة.
@@ -274,7 +288,7 @@
                    
                 </div>
                 <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
-                    <img alt="Advanced football players in action" class="h-48 w-full object-cover rounded-lg mb-4" height="192" src="https://storage.googleapis.com/a1aa/image/WG60gyBtMG7ZPhC6TSedKxmt26aQBoUgS451kDr5GKWksjDKA.jpg" width="384"/>
+                    <img alt="Advanced football players in action" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8984-Enhanced-NR.jpg" width="384"/>
                     <h3 class="card-title">الجانب الذهني والنفسي</h3>
                     <br>
                     <p>
@@ -286,7 +300,7 @@
     </section>
     <section class="py-12 bg-gradient-to-r from-black to-[rgb(232,181,70)] transition-all duration-300 ease-in-out" id="maggie-section">
         <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start">
-            <img alt="Portrait of a woman with blonde hair and a green shirt" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 hover:scale-105 transition-transform duration-300 ease-in-out" height="200" src="https://storage.googleapis.com/a1aa/image/9zEG77v58M5XN11gtSRKmucyYsxyjM7QHFEEsGW3GXCU2xBF.jpg" width="200"/>
+            <img alt="Portrait of a woman with blonde hair and a green shirt" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 hover:scale-105 transition-transform duration-300 ease-in-out" height="200" src="./sh2-.png" width="200"/>
             <div class="text-center md:text-left">
                 <h1 class="text-3xl font-bold mb-4 text-white">
                     <br/>
