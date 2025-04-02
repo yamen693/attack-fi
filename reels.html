@@ -75,11 +75,12 @@
        </style>
 </head>
 <body class="bg-off-white">
-    <header class="fixed top-0 left-0 w-full z-10 bg-blue-600 shadow-md">
+    <header class="fixed top-0 left-0 w-full z-10 shadow-md" style="background: linear-gradient(to right, rgb(232, 181, 70), white, black);">
         <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
             <div class="flex items-center">
-                <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" width="80"/>
+                <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
                 <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white ml-4">Attack Academy</h1>
+
             </div>
             <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
                 <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
@@ -113,12 +114,16 @@
                         <i class="fas fa-chevron-down ml-2"></i>
                     </button>
                     <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
-                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="en">
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="en" href="./index.html" >
                             <a class="language-option" href="./index.html">EN</a>
                         </li>
-                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar">
+                     
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar"  href="./index .html">
                             <a class="language-option" href="./index .html">AR</a>
                         </li>
+                       
+                           
+                        
                     </ul>
                 </div>
                 <div class="md:hidden">
@@ -128,19 +133,22 @@
                 </div>
             </nav>
         </div>
-        <div class="md:hidden bg-white shadow-md hidden" id="mobile-menu">
+        <div class="md:hidden bg-blue shadow-md hidden" id="mobile-menu">
             <ul class="flex flex-col space-y-2 p-4">
-                <li>
-                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
+                <li class="mr-4">
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#about">About Us</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#vision">Vision</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#mission">Mission</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#programs">Our Programs</a>
                 </li>
                 <li class="mr-4">
                     <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
@@ -151,7 +159,6 @@
             </ul>
         </div>
     </header>
-    
     
 
     <section class="py-12 bg-white fade-in" id="reels">
