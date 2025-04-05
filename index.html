@@ -12,6 +12,80 @@
    
   
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+          }
+          
+          .arrow {
+
+            font-size: 30px;
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background-color: transparent;
+            color: #000000;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+          }
+          
+          .arrow:hover {
+            transform: translateY(-50%) scale(1.1);
+          }
+          
+          .social-media {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            width: 50px; /* Thinner width */
+            height: 200px; /* Adjust the height as needed */
+            background-color: transparent;
+            color: #fff;
+            transition: width 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+          }
+          
+          .social-media ul {
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+            display: none; /* Initially hidden */
+          }
+          
+          .social-media.open {
+            width: 100px; /* Expand to show the full menu */
+          }
+          
+          .social-media.open ul {
+            display: flow-root; /* Show the list when open */
+          }
+          
+          .social-media ul li {
+            margin: 10px 0;
+          }
+          
+          .social-media ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            display: block;
+            transition: background-color 0.3s ease;
+          }
+          
+          .social-media ul li a:hover {
+            background-color:black;
+          }
+          
+          
           /* Mobile menu styles */
           * {
             font-family: 'Roboto', sans-serif;
@@ -178,6 +252,15 @@
                         
                     </ul>
                 </div>
+                <div   class="arrow" onclick="toggleSocialMedia()">&#8592;</div> <!-- Left arrow symbol -->
+
+  <div  style="border-radius: 25px;" class="social-media" id="social-media">
+    <ul>
+      <li><a href="https://facebook.com" target="_blank" ><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+    </ul>
+  </div>
                 <div class="md:hidden">
                     <button class="text-white focus:outline-none" id="mobile-menu-button">
                         <i class="fas fa-bars"></i>
@@ -379,6 +462,12 @@
                 }
             });
         });
+        function toggleSocialMedia() {
+            var socialMedia = document.getElementById('social-media');
+            socialMedia.classList.toggle('open');
+          }
+          
+          
     </script>
     <script src="./index.js"></script>
 </body>
