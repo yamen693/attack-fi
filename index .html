@@ -8,17 +8,111 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="./attack (1).png" rel="icon" type="image/png"/>
+    <script src="https://kit.fontawesome.com/843a6e712c.js" crossorigin="anonymous"></script>
 
-  
     <style>
-               /* Mobile menu styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10;
+            padding: 0;
+            background-color: #f4f4f4;
+          }
+          
+          .arrow {
+        border: none;
+            font-size: 30px;
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor:default;
+            
+            color: #000000;
+            padding: 10px;
+            border-radius: 25px;
+            z-index: 1000;
+            
+            transition: transform 0.3s ease;
+            
+          }
+          
+          .arrow:hover {
+            transform: translateY(-50%) scale(1.1);
+          }
+          
+          .social-media {
+            border: none;
+            border-radius: 50;
+            position: fixed;
+            right: 0;
+            top: 50%;
+            width: 50px; /* Thinner width */
+            height:200px; /* Adjust the height as needed */
+            background-color: transparent;
+            color: #fff;
+            transition: width 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            
+            
+          }
+          
+          .social-media ul {
+            list-style-type:circle;
+            padding: 10px;
+            margin: 0;
+            display: none; /* Initially hidden */
+          }
+          
+          .social-media.open {
+            width: 100px; /* Expand to show the full menu */
+            display: flex; /* Show the list when open */
+            flex-direction: column; /* Stack the list vertically */
+            align-items: center; /* Center the list items */
+            justify-content: center; /* Center the list items vertically */
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            background: #000;
+          }
+          
+          .social-media.open ul {
+            display: flow-root; /* Show the list when open */
+            
+          }
+          
+          .social-media ul li {
+            margin: 10px 0;
+          }
+          
+          .social-media ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            display: block;
+            transition: background-color 0.3s ease;
+          }
+          
+          .social-media ul li a:hover {
+            background-color:rgb(232, 181, 70);
+            border-radius: 25px;
+            
+          }
+          
+          
+          /* Mobile menu styles */
+          * {
+            font-family: 'Roboto', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
     #mobile-menu {
         position: absolute;
         top: 100%;
         right: 10px; /* Adds spacing from the right */
         width: 80%; /* Adjust width for a smaller size */
         max-width: 250px; /* Limit max width */
-        background: linear-gradient(to bottom, black, rgb(232,181,70));
+        background: linear-gradient(to bottom, black, rgb(0, 0, 0));
         border-radius: 10px;
         padding: 10px;
         display: none;
@@ -32,6 +126,14 @@
         opacity: 1;
         transform: translateY(0);
     }
+        #lp{
+            background-size: contain;
+        }
+        marquee{
+            font: xx-large;
+            width: 100%;
+
+        }
         @keyframes magicIn {
             0% {
                 opacity: 0;
@@ -97,20 +199,7 @@
     border-radius: 6px;
     border: 3px solid black;
 }
-.marquee {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll-left 10s linear infinite;
-  }
 
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
     </style>
 </head>
 <body class="bg-off-white">
@@ -176,6 +265,14 @@
                        
                     
                 </ul>
+            </div>
+            <div   class="arrow" onclick="toggleSocialMedia()">&#8592;</div> <!-- Left arrow symbol -->
+
+            <div style="border-radius: 25px ;"  hidden  class="social-media" id="social-media">
+              <ul>
+                <li style="border-radius: 50px;"  ><a href="tel:01128043787" ><i class="fa-solid fa-phone" style="color: #64ef61;"></i></a></li>
+                <li style="border-radius: 50px;" ><a href="" ><i class="fa-brands fa-whatsapp fa-lg" style="color: #25d366;"></i></a></li>
+              </ul>
             </div>
             <div class="md:hidden">
                 <button class="text-white focus:outline-none" id="mobile-menu-button">
@@ -374,6 +471,12 @@
                 }
             });
         });
+        function toggleSocialMedia() {
+            var socialMedia = document.getElementById('social-media');
+            socialMedia.classList.toggle('open');
+          }
+          
+          
     </script>
     <script src="./index.js"></script>
 </body>

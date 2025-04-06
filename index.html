@@ -7,33 +7,36 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="./attack (1).png" rel="icon" type="image/png"/>
+    <script src="https://kit.fontawesome.com/843a6e712c.js" crossorigin="anonymous"></script>
 
    
   
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
+            margin: 10;
             padding: 0;
             background-color: #f4f4f4;
           }
           
           .arrow {
-
+        border: none;
             font-size: 30px;
             position: fixed;
-            right: 10px;
+            left: 0;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            background-color: transparent;
+            
             color: #000000;
             padding: 10px;
-            border-radius: 50%;
+            border-radius: 25px;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            
             transition: transform 0.3s ease;
+            
           }
           
           .arrow:hover {
@@ -41,20 +44,25 @@
           }
           
           .social-media {
+            border: none;
+            border-radius: 50;
             position: fixed;
-            right: 0;
+            left: 0;
             top: 50%;
             width: 50px; /* Thinner width */
-            height: 200px; /* Adjust the height as needed */
+            height:200px; /* Adjust the height as needed */
             background-color: transparent;
             color: #fff;
             transition: width 0.3s ease;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            
+            
           }
           
           .social-media ul {
-            list-style-type: none;
+            list-style-type:circle;
             padding: 10px;
             margin: 0;
             display: none; /* Initially hidden */
@@ -62,10 +70,17 @@
           
           .social-media.open {
             width: 100px; /* Expand to show the full menu */
+            display: flex; /* Show the list when open */
+            flex-direction: column; /* Stack the list vertically */
+            align-items: center; /* Center the list items */
+            justify-content: center; /* Center the list items vertically */
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            background: #000;
           }
           
           .social-media.open ul {
             display: flow-root; /* Show the list when open */
+            
           }
           
           .social-media ul li {
@@ -82,7 +97,9 @@
           }
           
           .social-media ul li a:hover {
-            background-color:black;
+            background-color:rgb(232, 181, 70);
+            border-radius: 25px;
+            
           }
           
           
@@ -252,13 +269,12 @@
                         
                     </ul>
                 </div>
-                <div   class="arrow" onclick="toggleSocialMedia()">&#8592;</div> <!-- Left arrow symbol -->
+                <div   class="arrow" onclick="toggleSocialMedia()">&#8594;</div> <!-- Left arrow symbol -->
 
-  <div  style="border-radius: 25px;" class="social-media" id="social-media">
+  <div style="border-radius: 25px ;"  hidden  class="social-media" id="social-media">
     <ul>
-      <li><a href="https://facebook.com" target="_blank" ><i class="fab fa-facebook-f"></i></a></li>
-      <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+      <li  class="flex items-center justify-between cursor-pointer" style="border-radius: 50px;"  ><a href="tel:01128043787" ><i class="fa-solid fa-phone" style="color: #64ef61;"></i></a></li>
+      <li class="flex items-center justify-between cursor-pointer" style="border-radius: 50px;" ><a href="" ><i class="fa-brands fa-whatsapp fa-lg" style="color: #25d366;"></i></a></li>
     </ul>
   </div>
                 <div class="md:hidden">
