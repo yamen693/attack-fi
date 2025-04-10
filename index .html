@@ -9,9 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="./attack (1).png" rel="icon" type="image/png"/>
     <script src="https://kit.fontawesome.com/843a6e712c.js" crossorigin="anonymous"></script>
-
     <style>
-    
         body {
             font-family: Arial, sans-serif;
             margin: 10;
@@ -23,10 +21,10 @@
         border: none;
             font-size: 30px;
             position: fixed;
-            right: 0;
+            left: 0;
             top: 50%;
             transform: translateY(-50%);
-            cursor:default;
+            cursor: pointer;
             
             color: #000000;
             padding: 10px;
@@ -45,7 +43,7 @@
             border: none;
             border-radius: 50;
             position: fixed;
-            right: 0;
+            left: 0;
             top: 50%;
             width: 50px; /* Thinner width */
             height:200px; /* Adjust the height as needed */
@@ -203,13 +201,13 @@
 
     </style>
 </head>
-<body  class="bg-[rgb(143, 143, 143)]">
+<body  style="background-color:whitesmoke;">
     <!-- Intro Page -->
     <div class="intro-screen" id="intro">
         <img alt="Attack Academy Logo" class="intro-logo" height="48" src="./attack (1).png" width="48"/>
     </div>
     <!-- News Ticker -->
-    <div class="bg-gradient-to-r from-[rgb(232,181,70)] to-[rgb(0,0,0)] via-[rgb(232,181,70)]text-white py-2 text-center">
+    <div class="bg-gradient-to-r from-[rgb(214,255,60)] to-[rgb(0,0,0)] via-[rgb(214,255,60)]text-white py-2 text-center">
         <marquee behavior="scroll" direction="right">
         <h1> Ramdan offer <span style="color: rgb(255, 0, 0);"> 70%</span> OF</h1>
         
@@ -267,7 +265,7 @@
                     
                 </ul>
             </div>
-            <div   class="arrow" onclick="toggleSocialMedia()">&#8592;</div> <!-- Left arrow symbol -->
+            <div   class="arrow" onclick="toggleSocialMedia()">&#8594;</div> <!-- Left arrow symbol -->
 
             <div style="border-radius: 25px ;"  hidden  class="social-media" id="social-media">
               <ul>
@@ -324,17 +322,16 @@
             </p>
         </div>
     </section>
-    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="vision">
+    <section class="py-12  transition-all duration-300 ease-in-out" id="vision">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in"> رؤيتنا</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-[rgb(214,255,60)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Vision image showing a football field with a clear sky" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_9149-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         أن نصبح نموذجًا رياديًا في تطوير لاعبي كرة القدم الشباب على المستوى المحلي والإقليمي، من خلال توفير بيئة تعليمية ورياضية متكاملة تُعزز من مهاراتهم البدنية والفنية والعقلية، مع غرس قيم الروح الرياضية والانضباط والاحترافية، لتخريج لاعبين قادرين على تحقيق النجاح داخل وخارج الملعب.
                     </p>
-                </div>
-                <div class="bg-[rgb(214,255,60)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                </div >
                     <img alt="Vision image showing a group of young football players in action" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_9171-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         مكونات هذه الرؤية:
@@ -347,17 +344,17 @@
             </div>
         </div>
     </section>
-    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="mission">
+    <section class="py-12  transition-all duration-300 ease-in-out" id="mission">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">مهمتنا</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-[rgb(214,255,60)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Mission image showing a coach instructing young players" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8947-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         مهمتنا هي تقديم برامج تدريبية عالية الجودة تركز على التطوير البدني والفني والنفسي والتكتيكي للاعبينا.
                     </p>
                 </div>
-                <div class="bg-[rgb(214,255,60)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Mission image showing young players celebrating a goal" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_9130-Enhanced-NR.jpg" width="384"/>
                     <p class="text-black mb-4 transition-text-white">
                         نحن نسعى جاهدين لغرس قيم العمل الجماعي والانضباط والروح الرياضية في لاعبينا، وإعدادهم للنجاح داخل وخارج الملعب.
@@ -366,11 +363,11 @@
             </div>
         </div>
     </section>
-    <section class="py-12 bg-white transition-all duration-300 ease-in-out" id="programs">
+    <section class="py-12  transition-all duration-300 ease-in-out" id="programs">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-4 gradient-text slide-in">برامجنا</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="program-card bg-[rgb(214,255,60)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Young football players practicing basic skills" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./Screenshot 2025-04-03 104058.png" width="384"/>
                     <h3 class="card-title" style="text-bold">
                         البرامج التدريبية للمهارات الفنية</h3>
@@ -378,7 +375,7 @@
                     <p>تُركّز هذه البرامج على تعزيز المهارات الأساسية مثل التمرير، والمراوغة، والتسديد، والتحكم بالكرة. ويتم ذلك من خلال جلسات تدريبية مُنظمة تتضمن تمارين متنوعة تُحاكي المواقف الحقيقية التي يواجهها اللاعبون أثناء المباريات.</p>
                     <!-- <p class="price">$100/month</p> -->
                 </div>
-                <div class="program-card bg-[rgb(214,255,60)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Intermediate football players improving their skills" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8968-Enhanced-NR.jpg" width="384"/>
                     <h3 class="card-title"> البرامج المخصصة للتطوير البدني</h3>
                     <br>
@@ -386,7 +383,7 @@
                     </p>
                    
                 </div>
-                <div class="program-card bg-[rgb(214,255,60)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="program-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out">
                     <img alt="Advanced football players in action" class="h-60 w-full object-cover rounded-lg mb-4" height="192" src="./IMG_8984-Enhanced-NR.jpg" width="384"/>
                     <h3 class="card-title">الجانب الذهني والنفسي</h3>
                     <br>
