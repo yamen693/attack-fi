@@ -14,6 +14,10 @@
    
   
     <style>
+        footer{
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 10;
@@ -202,6 +206,17 @@
     border-radius: 6px;
     border: 3px solid black;
 }
+/* Default background color for the nav */
+nav {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/* Background color when scrolling */
+nav.scrolled {
+    background-color: black;
+}
+
 
     </style>
 </head>
@@ -312,7 +327,7 @@
     </header>
    
     <section class="relative" id="lp">
-        <img alt="Football field with players practicing" class="w-full h-[500] object-background-size:[340px]" height="500" src="./tttttt.jpg" width="100%"/>
+        <img alt="Football field with players practicing" class="w-full h-[500] object-background-size:[340px]" height="500" src="cover.png" width="100%"/>
        </section>
     <section class="py-12 bg-white fade-in" id="about">
         <div class="container mx-auto text-center">
@@ -416,48 +431,44 @@
             </div>
         </div>
     </section>
-    <footer class="relative bg-[rgb(232,181,70)] text-black py-6 px-4 transition-all duration-300 ease-in-out">
-        <div class="max-w-4xl mx-auto text-center">
-          <p class="hover:text-white transition-colors duration-300 ease-in-out">
-            © 2024 Attack Academy. All rights reserved.
-          </p>
-      
-          <div class="mt-4">
-            <p>
+    <footer class="bg-[rgb(232,181,70)] text-black py-6 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start space-y-6 md:space-y-0">
+          
+          <!-- Left: Texts -->
+          <div class="text-center md:text-left">
+            <p>© 2024 Attack Academy. All rights reserved.</p>
+            <p class="mt-2">
               Coaches: To apply for a job click 
-              <a href="https://wa.me/201128043787" class="hover:text-white transition-colors duration-300 ease-in-out border-b border-black">
-                here
-              </a> 
+              <a href="https://wa.me/201128043787" class="hover:text-white border-b border-black transition-colors duration-300">here</a> 
               or for telephone 
-              <a href="tel:01128043787" class="hover:text-white transition-colors duration-300 ease-in-out border-b border-black">
-                here
-              </a>.
+              <a href="tel:01128043787" class="hover:text-white border-b border-black transition-colors duration-300">here</a>.
             </p>
+      
+            <!-- Social Icons -->
+            <div class="flex justify-center md:justify-start space-x-4 mt-4">
+              <a href="https://www.facebook.com/share/15kEBiVWmL/" target="_blank" class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/attack_fa_?igsh=MWlsajQ0dmZiMnd2OQ==" target="_blank" class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.tiktok.com/@attack.football.a" target="_blank" class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
           </div>
       
-          <div class="flex justify-center space-x-4 mt-6">
-            <a href="https://www.facebook.com/share/15kEBiVWmL/" target="_blank" title="Facebook"
-               class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300 ease-in-out">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/attack_fa_?igsh=MWlsajQ0dmZiMnd2OQ==" target="_blank" title="Instagram"
-               class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300 ease-in-out">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/@attack.football.a" target="_blank" title="TikTok"
-               class="bg-black text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-[rgb(232,181,70)] hover:text-black transition-colors duration-300 ease-in-out">
-              <i class="fab fa-tiktok"></i>
-            </a>
+          <div class="mt-10 text-center">
+            <h2 class="text-xl md:text-2xl font-bold text-black mb-4">Our Partners:</h2>
+            <div class="flex flex-wrap justify-center items-center gap-6">
+              <img src="attack (1).png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+              <img src="/WhatsApp Image 2025-04-12 at 3.33.34 PM.png" alt="Partner 2" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+            </div>
           </div>
-        </div>
-      
-        <!-- Partner Logos -->
-        <div class="absolute bottom-4 right-4 flex space-x-6">
-          <img src="./attack (1).png" alt="Partner 1" class="w-24 h-auto object-contain transition-transform duration-300 ease-in-out hover:scale-105" />
-          <img src="./WhatsApp Image 2025-04-12 at 3.33.34 PM.png" alt="Partner 2" class="w-24 h-auto object-contain transition-transform duration-300 ease-in-out hover:scale-105" />
         </div>
       </footer>
-      
+         
+          
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const languageButton = document.getElementById('language-button');
@@ -498,12 +509,7 @@
                 }
             });
         });
-        function toggleSocialMedia() {
-            var socialMedia = document.getElementById('social-media');
-            socialMedia.classList.toggle('open');
-          }
-          
-          
+      
     </script>
     <script src="./index.js"></script>
 </body>
