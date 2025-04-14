@@ -14,6 +14,38 @@
    
   
     <style>
+        
+        *{
+            border: none;
+        }
+        .contact-fab {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgb(232, 181, 70);
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 8px 15px rgb(232, 181, 70);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .contact-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 18px rgb(232, 181, 70);
+          }
+         
+          
+        
+          
+      
         footer{
             margin: 0;
             padding: 0;
@@ -43,70 +75,8 @@
             
           }
           
-          .arrow:hover {
-            transform: translateY(-50%) scale(1.1);
-          }
-          
-          .social-media {
-            border: none;
-            border-radius: 50;
-            position: fixed;
-            left: 0;
-            top: 50%;
-            width: 50px; /* Thinner width */
-            height:200px; /* Adjust the height as needed */
-            background-color: transparent;
-            color: #fff;
-            transition: width 0.3s ease;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-            
-            
-          }
-          
-          .social-media ul {
-            list-style-type:circle;
-            padding: 10px;
-            margin: 0;
-            display: none; /* Initially hidden */
-          }
-          
-          .social-media.open {
-            width: 100px; /* Expand to show the full menu */
-            display: flex; /* Show the list when open */
-            flex-direction: column; /* Stack the list vertically */
-            align-items: center; /* Center the list items */
-            justify-content: center; /* Center the list items vertically */
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-            background: #000;
-          }
-          
-          .social-media.open ul {
-            display: flow-root; /* Show the list when open */
-            
-          }
-          
-          .social-media ul li {
-            margin: 10px 0;
-          }
-          
-          .social-media ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            padding: 5px 10px;
-            display: block;
-            transition: background-color 0.3s ease;
-          }
-          
-          .social-media ul li a:hover {
-            background-color:rgb(232, 181, 70);
-            border-radius: 25px;
-            
-          }
-          
-          
+   
+      
           /* Mobile menu styles */
           * {
             font-family: 'Roboto', sans-serif;
@@ -218,9 +188,48 @@ nav.scrolled {
 }
 
 
+.social-media {
+    position: fixed;
+    bottom: 90px;
+    left: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: none; /* Make sure no background */
+    box-shadow: none;  /* Remove box shadow */
+    border: none;      /* Remove border */
+  }
+  
+  .social-media ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: none; /* Kill background */
+    box-shadow: none;
+    border: none;
+  }
+  
+  .social-media li {
+    padding: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .social-media li:hover {
+    background-color: rgb(232, 181, 70);
+    transform: scale(1.1);
+  }
+  
+
+  
     </style>
 </head>
-<body class="bg-off-white">
+<body class="text-black bg-white">
     <!-- Intro Page -->
     <div class="intro-screen" id="intro">
         <img alt="Attack Academy Logo" class="intro-logo" height="48" src="./attack (1).png" width="48"/>
@@ -267,11 +276,11 @@ nav.scrolled {
                     </ul>
                 </div>
                 <div class="relative mr-4">
-                    <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button">
+                    <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button"  aria-haspopup="true" aria-expanded="false">
                         <span>EN</span>
                         <i class="fas fa-chevron-down ml-2"></i>
                     </button>
-                    <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
+                    <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu" >
                         <li class="px-4 py-2 hover:bg-gray-200" data-lang="en" href="./index.html" >
                             <a class="language-option" href="./index.html">EN</a>
                         </li>
@@ -284,14 +293,7 @@ nav.scrolled {
                         
                     </ul>
                 </div>
-                <div   class="arrow" onclick="toggleSocialMedia()">&#8594;</div> <!-- Left arrow symbol -->
-
-  <div style="border-radius: 25px ;"  hidden  class="social-media" id="social-media">
-    <ul>
-      <li  class="flex items-center justify-between cursor-pointer" style="border-radius: 50px;"  ><a href="tel:01128043787" ><i class="fa-solid fa-phone" style="color: #64ef61;"></i></a></li>
-      <li class="flex items-center justify-between cursor-pointer" style="border-radius: 50px;" ><a href="" ><i class="fa-brands fa-whatsapp fa-lg" style="color: #25d366;"></i></a></li>
-    </ul>
-  </div>
+                
                 <div class="md:hidden">
                     <button class="text-white focus:outline-none" id="mobile-menu-button">
                         <i class="fas fa-bars"></i>
@@ -444,6 +446,43 @@ nav.scrolled {
       
         </div>
       </section>
+      <div class="contact-fab" onclick="toggleSocialMedia()">
+        <i class="fa-solid fa-comments"></i> <!-- You can change this icon -->
+      </div>
+      
+      <div hidden class="social-media" id="social-media">
+        <ul>
+          <li>
+            <a href="tel:01128043787">
+              <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/01128043787">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-fab" onclick="toggleSocialMedia()">
+        <i class="fa-solid fa-comments"></i>
+      </div>
+      
+      <div hidden class="social-media" id="social-media">
+        <ul>
+          <li>
+            <a href="tel:01128043787">
+              <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/01128043787">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
 
         
     <footer class="bg-[rgb(232,181,70)] text-black py-6 px-4">
@@ -485,48 +524,56 @@ nav.scrolled {
       </footer>
          
           
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // LANGUAGE MENU TOGGLE
             const languageButton = document.getElementById('language-button');
             const languageMenu = document.getElementById('language-menu');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            languageButton.addEventListener('click', function() {
+    
+            languageButton.addEventListener('click', function (e) {
+                e.stopPropagation(); // Prevent click from bubbling up
                 languageMenu.classList.toggle('hidden');
             });
-
-            document.addEventListener('click', function(event) {
+    
+            document.addEventListener('click', function (event) {
                 if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
                     languageMenu.classList.add('hidden');
                 }
             });
-
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.getElementById('intro').classList.add('hidden');
-            }, 3000);
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            const mobileMenuButton = document.getElementById("mobile-menu-button");
-            const mobileMenu = document.getElementById("mobile-menu");
     
-            mobileMenuButton.addEventListener("click", function () {
+            // MOBILE MENU TOGGLE
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+    
+            mobileMenuButton.addEventListener('click', function () {
                 if (mobileMenu.classList.contains("open")) {
-                    mobileMenu.style.display = "none"; // Hide when closing
+                    mobileMenu.style.display = "none";
                     setTimeout(() => mobileMenu.classList.remove("open"), 300);
                 } else {
-                    mobileMenu.style.display = "block"; // Show before animation
+                    mobileMenu.style.display = "block";
                     setTimeout(() => mobileMenu.classList.add("open"), 10);
                 }
             });
+    
+            // INTRO SECTION HIDE
+            const intro = document.getElementById('intro');
+            if (intro) {
+                setTimeout(function () {
+                    intro.classList.add('hidden');
+                }, 3000);
+            }
+    
+            // SOCIAL MEDIA TOGGLE
+            window.toggleSocialMedia = function () {
+                const sm = document.getElementById('social-media');
+                if (sm) {
+                    sm.classList.toggle('open');
+                    sm.hidden = !sm.hidden;
+                }
+            };
         });
-      
     </script>
+    
     <script src="./index.js"></script>
 </body>
 </html>
