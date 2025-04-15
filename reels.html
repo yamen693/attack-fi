@@ -194,17 +194,13 @@
                         <span><i class="fa-solid fa-language" style="color: #e8b546;"></i></span>
                         <i class="fas fa-chevron-down ml-2"></i>
                     </button>
-                    <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu" >
-                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="en" href="./index.html" >
-                            <a class="language-option" href="./index.html">EN</a>
+                    <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
+                        <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="en">
+                            <a href="./index.html" class="block w-full h-full">EN</a>
                         </li>
-                     
-                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar"  href="./index .html">
-                            <a class="language-option" href="./index .html">AR</a>
+                        <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="ar">
+                            <a href="index .html" class="block w-full h-full">AR</a>
                         </li>
-                       
-                           
-                        
                     </ul>
                 </div>
                 
@@ -477,6 +473,30 @@
             }
         };
     });
+                    // Handle language selection
+                    document.querySelectorAll(".language-option").forEach(item => {
+                        item.addEventListener("click", () => {
+                            const lang = item.getAttribute("data-lang");
+                            if (lang === "en") {
+                                window.location.href = "./index.html";
+                            } else if (lang === "ar") {
+                                window.location.href = "./index.html"; // Replace if there's an Arabic version
+                            }
+                        });
+                    });
+                  
+                    // Optional: Close the menu if clicked outside
+                    document.addEventListener("click", (e) => {
+                        if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+                            langMenu.classList.add("hidden");
+                        }
+                    });
+                    document.querySelectorAll(".language-option").forEach(item => {
+                        item.addEventListener("click", () => {
+                            const href = item.getAttribute("data-href");
+                            window.location.href = href;
+                        });
+                    });
 </script>
 </body>
 </html>
