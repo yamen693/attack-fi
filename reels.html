@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="./attack (1).png" rel="icon" type="image/png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @keyframes magicIn {
                  0% {
@@ -156,49 +157,58 @@
        </style>
 </head>
 <body class="bg-off-white">
-    <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md" >
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
         <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
             <div class="flex items-center">
                 <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
-                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white ml-4">Attack Academy</h1>
-    
+                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black ml-4">Attac<span style="color: rgb(232, 181, 70);">k</span> Academy</h1>
+
             </div>
             <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
                 <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
-                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-6">
                         <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
+                            <li><a href="index.html" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="home" >Home</a></li>
+                            <li><a href="#about" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="about" >About</a></li>
+                            <li><a href="#vision" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="vision">Vision</a></li>
+                            <li><a href="#mission" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="mission">Mission</a></li>
+                            <li><a href="#programs" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="programs">Programs</a></li>
                         </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html #about">About Us</a>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" >
+                            <a  href="./reels.html">Reels</a>
                         </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="index.html#vision">Vision</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#mission">Mission</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#programs ">Our Programs</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl">
+                            <a  href="https://yamen693.github.io/attack-final/">Contact</a>
                         </li>
                     </ul>
-                    
                 </div>
-           
-                <div   class="arrow" onclick="toggleSocialMedia()">&#8594;</div> <!-- Left arrow symbol -->
-    
-                <div style="border-radius: 25px ;"  hidden  class="social-media" id="social-media">
-                  <ul>
-                    <li style="border-radius: 50px;"  ><a href="tel:01128043787" ><i class="fa-solid fa-phone" style="color: #64ef61;"></i></a></li>
-                    <li style="border-radius: 50px;" ><a href="https://wa.me/01128043787" ><i class="fa-brands fa-whatsapp fa-lg" style="color: #25d366;"></i></a></li>
-                  </ul>
+                
+                <div class="relative ml-6 space-x-6 " >
+                    <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button"  aria-haspopup="true" aria-expanded="false">
+                        <span><i class="fa-solid fa-language" style="color: #e8b546;"></i></span>
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                    <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu" >
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="en" href="./index.html" >
+                            <a class="language-option" href="./index.html">EN</a>
+                        </li>
+                     
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar"  href="./index .html">
+                            <a class="language-option" href="./index .html">AR</a>
+                        </li>
+                       
+                           
+                        
+                    </ul>
                 </div>
+                
+                
                 <div class="md:hidden">
                     <button class="text-white focus:outline-none" id="mobile-menu-button">
                         <i class="fas fa-bars"></i>
@@ -206,37 +216,37 @@
                 </div>
             </nav>
         </div>
-        <div class="md:hidden bg-white shadow-md hidden" id="mobile-menu">
+        <div id="mobile-menu" class="hidden animate-slideDown ...">
+
             <ul class="flex flex-col space-y-2 p-4">
                 <li class="mr-4">
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#about">About Us</a>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="index.html#vision">Vision</a>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#mission">Mission</a>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html#programs">Our Programs</a>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
                 </li>
                 <li class="mr-4">
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-black nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
                 </li>
             </ul>
-            
         </div>
     </header>   
 
     <section class="py-12 bg-white fade-in" id="reels">
         <div class="container mx-auto text-center">
-         <h2 class="text-3xl font-bold mb-4 gradient-text">
+         <h2 class="text-3xl font-bold mb-4 gradient-text mt-6">
           Reels
          </h2>
          <div class="flex flex-col items-center gap-8">
@@ -339,6 +349,43 @@
          </div>
         </div>
        </section>
+       div class="contact-fab" onclick="toggleSocialMedia()">
+        <i class="fa-solid fa-comments"></i> <!-- You can change this icon -->
+      </div>
+      
+      <div hidden class="social-media" id="social-media">
+        <ul>
+          <li>
+            <a href="tel:01128043787">
+              <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/01128043787">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-fab" onclick="toggleSocialMedia()">
+        <i class="fa-solid fa-comments"></i>
+      </div>
+      
+      <div hidden class="social-media" id="social-media">
+        <ul>
+          <li>
+            <a href="tel:01128043787">
+              <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/01128043787">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
     <footer class="bg-[rgb(232,181,70)] text-black py-4 transition-all duration-300 ease-in-out">
         <div class="container mx-auto text-center transition-text">
             <p class="transition-text hover:text-white">© 2024 Attack Academy. All rights reserved.</p>
@@ -356,26 +403,80 @@
         </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const languageButton = document.getElementById('language-button');
-            const languageMenu = document.getElementById('language-menu');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            languageButton.addEventListener('click', function() {
-                languageMenu.classList.toggle('hidden');
+      
+        document.addEventListener("DOMContentLoaded", () => {
+          const links = document.querySelectorAll(".nav-link");
+          const sections = [...links].map(link => document.getElementById(link.dataset.section));
+      
+          const highlightLink = () => {
+            let scrollPosition = window.scrollY + 120; // adjust for navbar height
+      
+            sections.forEach((section, i) => {
+              if (
+                section.offsetTop <= scrollPosition &&
+                section.offsetTop + section.offsetHeight > scrollPosition
+              ) {
+                links.forEach(link => link.classList.remove("bg-yellow-300", "rounded"));
+                links[i].classList.add("bg-yellow-300", "rounded", "px-3", "py-1");
+              }
             });
-
-            document.addEventListener('click', function(event) {
-                if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
-                    languageMenu.classList.add('hidden');
-                }
-            });
-
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
+          };
+      
+          window.addEventListener("scroll", highlightLink);
         });
-    </script>
+   
+      
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) nav.classList.add('shadow-lg');
+        else nav.classList.remove('shadow-lg');
+      });
+    document.addEventListener('DOMContentLoaded', function () {
+        // LANGUAGE MENU TOGGLE
+        const languageButton = document.getElementById('language-button');
+        const languageMenu = document.getElementById('language-menu');
+
+        languageButton.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent click from bubbling up
+            languageMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', function (event) {
+            if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
+                languageMenu.classList.add('hidden');
+            }
+        });
+
+        // MOBILE MENU TOGGLE
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function () {
+            if (mobileMenu.classList.contains("open")) {
+                mobileMenu.style.display = "none";
+                setTimeout(() => mobileMenu.classList.remove("open"), 300);
+            } else {
+                mobileMenu.style.display = "block";
+                setTimeout(() => mobileMenu.classList.add("open"), 10);
+            }
+        });
+
+        // INTRO SECTION HIDE
+        const intro = document.getElementById('intro');
+        if (intro) {
+            setTimeout(function () {
+                intro.classList.add('hidden');
+            }, 3000);
+        }
+
+        // SOCIAL MEDIA TOGGLE
+        window.toggleSocialMedia = function () {
+            const sm = document.getElementById('social-media');
+            if (sm) {
+                sm.classList.toggle('open');
+                sm.hidden = !sm.hidden;
+            }
+        };
+    });
+</script>
 </body>
 </html>

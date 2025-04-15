@@ -10,10 +10,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="./attack (1).png" rel="icon" type="image/png"/>
     <script src="https://kit.fontawesome.com/843a6e712c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
    
   
     <style>
+   
+       
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out;
+  }
+  
         
         *{
             border: none;
@@ -251,33 +264,29 @@ nav.scrolled {
             </div>
             <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
                 <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
-                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-6">
                         <li class="mr-4">
-                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
+                            <li><a href="#about" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="about" >About</a></li>
+                            <li><a href="#vision" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="vision">Vision</a></li>
+                            <li><a href="#mission" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="mission">Mission</a></li>
+                            <li><a href="#programs" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="programs">Programs</a></li>
                         </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" >
+                            <a  href="./reels.html">Reels</a>
                         </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
-                        </li>
-                        <li class="mr-4">
-                            <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl">
+                            <a  href="https://yamen693.github.io/attack-final/">Contact</a>
                         </li>
                     </ul>
                 </div>
-                <div class="relative mr-4">
+                
+                <div class="relative ml-6 space-x-6 " >
                     <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button"  aria-haspopup="true" aria-expanded="false">
-                        <span>EN</span>
+                        <span><i class="fa-solid fa-language" style="color: #e8b546;"></i></span>
                         <i class="fas fa-chevron-down ml-2"></i>
                     </button>
                     <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu" >
@@ -301,7 +310,8 @@ nav.scrolled {
                 </div>
             </nav>
         </div>
-        <div class="md:hidden bg-white shadow-md hidden" id="mobile-menu">
+        <div id="mobile-menu" class="hidden animate-slideDown ...">
+
             <ul class="flex flex-col space-y-2 p-4">
                 <li class="mr-4">
                     <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
@@ -525,6 +535,33 @@ nav.scrolled {
          
           
       <script>
+      
+            document.addEventListener("DOMContentLoaded", () => {
+              const links = document.querySelectorAll(".nav-link");
+              const sections = [...links].map(link => document.getElementById(link.dataset.section));
+          
+              const highlightLink = () => {
+                let scrollPosition = window.scrollY + 120; // adjust for navbar height
+          
+                sections.forEach((section, i) => {
+                  if (
+                    section.offsetTop <= scrollPosition &&
+                    section.offsetTop + section.offsetHeight > scrollPosition
+                  ) {
+                    links.forEach(link => link.classList.remove("bg-yellow-300", "rounded"));
+                    links[i].classList.add("bg-yellow-300", "rounded", "px-3", "py-1");
+                  }
+                });
+              };
+          
+              window.addEventListener("scroll", highlightLink);
+            });
+       
+          
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) nav.classList.add('shadow-lg');
+            else nav.classList.remove('shadow-lg');
+          });
         document.addEventListener('DOMContentLoaded', function () {
             // LANGUAGE MENU TOGGLE
             const languageButton = document.getElementById('language-button');

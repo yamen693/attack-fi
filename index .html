@@ -9,8 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="./attack (1).png" rel="icon" type="image/png"/>
     <script src="https://kit.fontawesome.com/843a6e712c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
      
     <style>
+              
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out;
+  }
+  
         
         *{
             border: none;
@@ -238,93 +250,88 @@ nav.scrolled {
         
         </marquee>
        </div>
-   <!-- Header -->
-   <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
-    <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
-        <div class="flex items-center">
-            <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
-            <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white ml-4">Attack Academy</h1>
+       <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
+        <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
+            <div class="flex items-center">
+                <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
+                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white ml-4">Attack Academy</h1>
 
+            </div>
+            <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
+                <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-6">
+                        <li class="mr-4">
+                            <li><a href="#about" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="about" >About</a></li>
+                            <li><a href="#vision" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="vision">Vision</a></li>
+                            <li><a href="#mission" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="mission">Mission</a></li>
+                            <li><a href="#programs" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                                data-section="programs">Programs</a></li>
+                        </li>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" >
+                            <a  href="./reels.html">Reels</a>
+                        </li>
+                        <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl">
+                            <a  href="https://yamen693.github.io/attack-final/">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="relative ml-6 space-x-6 " >
+                    <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button"  aria-haspopup="true" aria-expanded="false">
+                        <span><i class="fa-solid fa-language" style="color: #e8b546;"></i></span>
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                    <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu" >
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="en" href="./index.html" >
+                            <a class="language-option" href="./index.html">EN</a>
+                        </li>
+                     
+                        <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar"  href="./index .html">
+                            <a class="language-option" href="./index .html">AR</a>
+                        </li>
+                       
+                           
+                        
+                    </ul>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none" id="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
         </div>
-        <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
-            <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
-                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0">
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
-                    </li>
-                    <li class="mr-4">
-                        <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
-                    </li>
-                </ul>
-            </div>
-      <div class="relative mr-4">
-        <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button"  aria-haspopup="true" aria-expanded="false">
-            <span>EN</span>
-            <i class="fas fa-chevron-down ml-2"></i>
-        </button>
-        <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu" >
-            <li class="px-4 py-2 hover:bg-gray-200" data-lang="en" href="./index.html" >
-                <a class="language-option" href="./index.html">EN</a>
-            </li>
-         
-            <li class="px-4 py-2 hover:bg-gray-200" data-lang="ar"  href="./index .html">
-                <a class="language-option" href="./index .html">AR</a>
-            </li>
-           
-               
-            
-        </ul>
-    </div>
-  
-            
-            <div class="md:hidden">
-                <button class="text-white focus:outline-none" id="mobile-menu-button">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-    </div>
-    <div class="md:hidden bg-white shadow-md hidden" id="mobile-menu">
-        <ul class="flex flex-col space-y-2 p-4">
-            <li class="mr-4">
-                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
-            </li>
-            <li>
-                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
-            </li>
-            <li>
-                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
-            </li>
-            <li>
-                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
-            </li>
-            <li>
-                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
-            </li>
-            <li class="mr-4">
-                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
-            </li>
-            <li>
-                <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
-            </li>
-        </ul>
-    </div>
-</header>
+        <div id="mobile-menu" class="hidden animate-slideDown ...">
+
+            <ul class="flex flex-col space-y-2 p-4">
+                <li class="mr-4">
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
+                </li>
+                <li class="mr-4">
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
+                </li>
+                <li>
+                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </header>
 <section class="relative">
     <section class="relative" id="lp">
         <img alt="Football field with players practicing" class="w-full h-[500] object-background-size:[340px]" height="500" src="cover.png" width="100%"/>
