@@ -153,6 +153,26 @@
                     border-radius: 25px;
                     
                   }
+                  #mobile-menu {
+                    position: absolute;
+                    top: 100%;
+                    right: 0px; /* Adds spacing from the right */
+                    width: 40%; /* Adjust width for a smaller size */
+                    max-width: 350px; /* Limit max width */
+                    background:transparent;
+                    border-radius: 10px;
+                    padding: 10px;
+                    display: none;
+                    opacity: 0;
+                    transform: translateY(-10px);
+                    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                }
+            
+                #mobile-menu.open {
+                    display: flex;
+                    opacity: 1;
+                    transform: translateX(60);
+                }
                   
        </style>
 </head>
@@ -162,15 +182,13 @@
         <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
             <div class="flex items-center">
                 <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
-                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black ml-4">Attac<span style="color: rgb(232, 181, 70);">k</span> Academy</h1>
+                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black ml-4">Attac<span style="color:rgb(232,181,70) ;">k</span> Academy</h1>
 
             </div>
             <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
                 <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
                     <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-6">
                         <li class="mr-4">
-                            <li><a href="index.html" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
-                                data-section="home" >Home</a></li>
                             <li><a href="#about" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
                                 data-section="about" >About</a></li>
                             <li><a href="#vision" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
@@ -189,24 +207,24 @@
                     </ul>
                 </div>
                 
-                <div class="relative ml-6 space-x-6 " >
+                <div class="relative ml-6 space-x-10 mr-6 " >
                     <button class="bg-transparent text-white nav-link flex items-center transition-colors duration-300 ease-in-out hover:text-yellow-500" id="language-button"  aria-haspopup="true" aria-expanded="false">
                         <span><i class="fa-solid fa-language" style="color: #e8b546;"></i></span>
                         <i class="fas fa-chevron-down ml-2"></i>
                     </button>
                     <ul class="absolute right-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden" id="language-menu">
-                        <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="en">
-                            <a href="./index.html" class="block w-full h-full">EN</a>
-                        </li>
-                        <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="ar">
-                            <a href="index .html" class="block w-full h-full">AR</a>
-                        </li>
-                    </ul>
+                      <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="en">
+                          <a href="./index.html" class="block w-full h-full">EN</a>
+                      </li>
+                      <li class="language-option px-4 py-2 hover:bg-gray-200" data-lang="ar">
+                          <a href="index .html" class="block w-full h-full">AR</a>
+                      </li>
+                  </ul>
+                  
                 </div>
                 
-                
                 <div class="md:hidden">
-                    <button class="text-white focus:outline-none" id="mobile-menu-button">
+                    <button class="text-black focus:outline-none" id="mobile-menu-button">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -216,29 +234,29 @@
 
             <ul class="flex flex-col space-y-2 p-4">
                 <li class="mr-4">
-                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./index.html">HOME</a>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="./index.html">HOME</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#about">About Us</a>
+                    <a class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#about">About Us</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#vision">Vision</a>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#vision">Vision</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#mission">Mission</a>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#mission">Mission</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="#programs">Our Programs</a>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#programs">Our Programs</a>
                 </li>
                 <li class="mr-4">
-                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="./reels.html">Reels</a>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="./reels.html">Reels</a>
                 </li>
                 <li>
-                    <a class="bg-transparent text-white nav-link transition-colors duration-300 ease-in-out hover:text-yellow-500" href="https://yamen693.github.io/attack-final/">Contact</a>
+                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="https://yamen693.github.io/attack-final/">Contact</a>
                 </li>
             </ul>
         </div>
-    </header>   
+    </header> 
 
     <section class="py-12 bg-white fade-in" id="reels">
         <div class="container mx-auto text-center">
