@@ -10,6 +10,78 @@
     <link href="./attack (1).png" rel="icon" type="image/png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        .social-media {
+            position: fixed;
+            bottom: 90px;
+            left: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: none; /* Make sure no background */
+            box-shadow: none;  /* Remove box shadow */
+            border: none;      /* Remove border */
+          }
+          
+          .social-media ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: none; /* Kill background */
+            box-shadow: none;
+            border: none;
+          }
+          
+          .social-media li {
+            padding: 12px;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+          }
+          
+          .social-media li:hover {
+            background-color: rgb(232, 181, 70);
+            transform: scale(1.1);
+          }
+        .contact-fab {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgb(232, 181, 70);
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 8px 15px rgb(232, 181, 70);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .contact-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 18px rgb(232, 181, 70);
+          }
+        @keyframes fadeInZoom {
+            0% {
+              opacity: 0;
+              transform: scale(0.95);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+          .animation-fade-zoom {
+            animation: fadeInZoom 0.6s ease forwards;
+          }
         @keyframes magicIn {
                  0% {
                      opacity: 0;
@@ -173,6 +245,31 @@
                     opacity: 1;
                     transform: translateX(60);
                 }
+               
+  #videoSection {
+    overflow: hidden;
+  }
+
+  .navigation-btn {
+    position: fixed;
+    z-index: 50;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .navigation-btn:active {
+    transform: scale(0.9);
+  }
+  .prev-btn { top: 50%; left: 10px; transform: translateY(-50%); }
+  .next-btn { top: 50%; right: 10px; transform: translateY(-50%); }
                   
        </style>
 </head>
@@ -182,20 +279,20 @@
         <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
             <div class="flex items-center">
                 <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
-                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black ml-4">Attac<span style="color:rgb(232,181,70) ;">k</span> Academy</h1>
+                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white  ml-4">Attac<span style="color:rgb(232,181,70) ;">k</span> Academy</h1>
 
             </div>
             <nav class="flex items-center ml-auto transition-all duration-300 ease-in-out">
                 <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
                     <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-6">
                         <li class="mr-4">
-                            <li><a href="#about" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                            <li><a href="#about" class="bg-yellow-300 text-black   px-4 py-1 rounded-xl"
                                 data-section="about" >About</a></li>
-                            <li><a href="#vision" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                            <li><a href="#vision" class="bg-yellow-300 text-black   px-4 py-1 rounded-xl"
                                 data-section="vision">Vision</a></li>
-                            <li><a href="#mission" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                            <li><a href="#mission" class="bg-yellow-300 text-black   px-4 py-1 rounded-xl"
                                 data-section="mission">Mission</a></li>
-                            <li><a href="#programs" class="bg-yellow-300 text-black px-4 py-1 rounded-xl"
+                            <li><a href="#programs" class="bg-yellow-300 text-black  px-4 py-1 rounded-xl"
                                 data-section="programs">Programs</a></li>
                         </li>
                         <li  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" >
@@ -224,7 +321,7 @@
                 </div>
                 
                 <div class="md:hidden">
-                    <button class="text-black focus:outline-none" id="mobile-menu-button">
+                    <button class="text-white focus:outline-none" id="mobile-menu-button">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -234,153 +331,133 @@
 
             <ul class="flex flex-col space-y-2 p-4">
                 <li class="mr-4">
-                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="./index.html">HOME</a>
+                    <a  class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="./index.html">HOME</a>
                 </li>
                 <li>
-                    <a class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#about">About Us</a>
+                    <a class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="#about">About Us</a>
                 </li>
                 <li>
-                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#vision">Vision</a>
+                    <a  class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="#vision">Vision</a>
                 </li>
                 <li>
-                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#mission">Mission</a>
+                    <a  class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="#mission">Mission</a>
                 </li>
                 <li>
-                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="#programs">Our Programs</a>
+                    <a  class="bg-yellow-300 text-white px-4 py-1 rounded-xl" href="#programs">Our Programs</a>
                 </li>
                 <li class="mr-4">
-                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="./reels.html">Reels</a>
+                    <a  class="bg-yellow-300 text-white  px-4 py-1 rounded-xl" href="./reels.html">Reels</a>
                 </li>
                 <li>
-                    <a  class="bg-yellow-300 text-black px-4 py-1 rounded-xl" href="https://yamen693.github.io/attack-final/">Contact</a>
+                    <a  class="bg-yellow-300 text-white  px-4 py-1 rounded-xl" href="https://yamen693.github.io/attack-final/">Contact</a>
                 </li>
             </ul>
         </div>
     </header> 
 
-    <section class="py-12 bg-white fade-in" id="reels">
-        <div class="container mx-auto text-center">
-         <h2 class="text-3xl font-bold mb-4 gradient-text mt-6">
-          Reels
-         </h2>
-         <div class="flex flex-col items-center gap-8">
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 1
-           </h3>
-           <p>
-            Highlights from our latest match.
-           </p>
-          </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 2
-           </h3>
-           <p>
-            Training session highlights.
-           </p>
-          </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 3
-           </h3>
-           <p>
-            Player interviews and behind the scenes.
-           </p>
-          </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 4
-           </h3>
-           <p>
-            Best goals of the season.
-           </p>
-          </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 5
-           </h3>
-           <p>
-            Behind the scenes of our training camp.
-           </p>
-          </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 6
-           </h3>
-           <p>
-            Interviews with our coaches.
-           </p>
-          </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 7
-           </h3>
-           <p>
-            Highlights from our community events.
-           </p>
-          </div>
-          <div class="reel-card bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover:scale-105 transition-transform duration-300 ease-in-out w-full md:w-1/2 lg:w-1/3">
-           <video class="w-full h-[calc(100vh-200px)] object-cover rounded-lg mb-4" controls="">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-            Your browser does not support the video tag.
-           </video>
-           <h3 class="card-title">
-            Reel 8
-           </h3>
-           <p>
-            Special moments from our academy.
-           </p>
-          </div>
-         </div>
-        </div>
-       </section>
-       div class="contact-fab" onclick="toggleSocialMedia()">
-        <i class="fa-solid fa-comments"></i> <!-- You can change this icon -->
-      </div>
+    <section id="reels" class="h-screen overflow-y-scroll snap-y snap-mandatory bg-black text-white">
+        <div class="flex flex-col">
       
-      <div hidden class="social-media" id="social-media">
-        <ul>
-          <li>
-            <a href="tel:01128043787">
-              <i class="fa-solid fa-phone" style="color: #64ef61;"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://wa.me/01128043787">
-              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+          <!-- Reel 1 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 1</h3>
+              <p class="text-sm">Highlights from our latest match.</p>
+            </div>
+          </div>
+      
+          <!-- Reel 2 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 2</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
+          </div>
+      
+          <!-- Reel 3 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 3</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
+          </div>
+      
+          <!-- Reel 4 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 4</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
+          </div>
+      
+          <!-- Reel 5 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 5</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
+          </div>
+      
+          <!-- Reel 6 -->
+          <div class="snap-start h-screen flex flex-col items-center justify-center relative px-4 py-8 opacity-0">
+            <video
+              class="w-full max-w-md h-[70vh] object-cover rounded-lg shadow-lg"
+              muted
+              playsinline
+              preload="auto"
+            >
+              <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+            </video>
+            <div class="mt-4 text-center">
+              <h3 class="text-xl font-bold">Reel 6</h3>
+              <p class="text-sm">Training session highlights.</p>
+            </div>
+          </div>
+      
+        </div>
+      </section>
+      
+      
       <div class="contact-fab" onclick="toggleSocialMedia()">
         <i class="fa-solid fa-comments"></i>
       </div>
@@ -399,6 +476,7 @@
           </li>
         </ul>
       </div>
+      
       
     <footer class="bg-[rgb(232,181,70)] text-black py-4 transition-all duration-300 ease-in-out">
         <div class="container mx-auto text-center transition-text">
@@ -515,6 +593,65 @@
                             window.location.href = href;
                         });
                     });
+                    const containers = document.querySelectorAll("#reels .snap-start");
+                    const videos = document.querySelectorAll("#reels video");
+                  
+                    const observer = new IntersectionObserver(
+                      (entries) => {
+                        entries.forEach((entry) => {
+                          const container = entry.target.closest('.snap-start');
+                          if (entry.isIntersecting) {
+                           
+                            entry.target.play();
+                           
+                            container.classList.add('animation-fade-zoom');
+                          } else {
+                            
+                            entry.target.pause();
+                           
+                            container.classList.remove('animation-fade-zoom');
+                          }
+                        });
+                      },
+                      { threshold: 0.75 }
+                    );
+                  
+                    videos.forEach((video) => observer.observe(video));
+
+            // SOCIAL MEDIA TOGGLE
+            window.toggleSocialMedia = function () {
+                const sm = document.getElementById('social-media');
+                if (sm) {
+                    sm.classList.toggle('open');
+                    sm.hidden = !sm.hidden;
+                }
+            };
+     
+                // Handle language selection
+    document.querySelectorAll(".language-option").forEach(item => {
+        item.addEventListener("click", () => {
+            const lang = item.getAttribute("data-lang");
+            if (lang === "en") {
+                window.location.href = "./index.html";
+            } else if (lang === "ar") {
+                window.location.href = "./index.html"; // Replace if there's an Arabic version
+            }
+        });
+    });
+  
+    // Optional: Close the menu if clicked outside
+    document.addEventListener("click", (e) => {
+        if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+            langMenu.classList.add("hidden");
+        }
+    });
+    document.querySelectorAll(".language-option").forEach(item => {
+        item.addEventListener("click", () => {
+            const href = item.getAttribute("data-href");
+            window.location.href = href;
+        });
+    });
+   
 </script>
 </body>
 </html>
