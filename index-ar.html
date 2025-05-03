@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مقسم فاتورة المياه</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body class="bg-blue-50 min-h-screen p-6 flex flex-col items-center space-y-6">
+
+  <div class="bg-white rounded-2xl shadow-xl w-full max-w-4xl p-8 space-y-6">
+    <h2 class="text-2xl font-bold text-blue-800 text-center">💧 مقسم فاتورة المياه</h2>
+
+    <!-- نموذج إضافة الأشخاص (أفقي دائماً) -->
+    <div class="flex flex-row flex-wrap items-center gap-4">
+      <input type="text" id="personName" class="border border-gray-300 rounded-lg p-2 w-36 text-right" placeholder="الاسم"/>
+      <input type="number" id="unpaidAmount" class="border border-gray-300 rounded-lg p-2 w-36 text-right" placeholder="المتبقي (جنيه)"/>
+      <button onclick="addPerson()" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-xl">
+        إضافة شخص
+      </button>
+    </div>
+
+    <!-- قائمة الأشخاص المضافين (أفقي) -->
+    <div id="peopleList" class="flex flex-row flex-wrap gap-4 text-sm bg-blue-100 p-4 rounded-lg hidden">
+      <ul id="peopleUl" class="flex flex-row flex-wrap gap-4 list-none p-0 m-0"></ul>
+    </div>
+
+    <!-- إدخال إجمالي الفاتورة -->
+    <div class="w-full">
+      <label class="block text-gray-700 font-semibold mb-1 text-right">أدخل قيمة الفاتورة الجديدة (جنيه)</label>
+      <input type="number" id="totalBill" class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-right" placeholder="مثال: 3000"/>
+    </div>
+
+    <!-- أزرار الإجراءات (أفقي) -->
+    <div class="flex flex-row flex-wrap gap-3">
+      <button onclick="calculate()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl">
+        احسب
+      </button>
+      <button onclick="resetAll()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-xl">
+        إعادة تعيين
+      </button>
+      <button id="downloadPdfBtn" onclick="downloadPDF()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-xl hidden">
+        تحميل PDF
+      </button>
+    </div>
+
+    <!-- نتائج الحساب -->
+    <div id="output" class="text-gray-800 space-y-4 text-right"></div>
+  </div>
+
+  <script>
+    const people = [];
+
+    function addPerson() {
+      const name = document.getElementById("personName").value.trim();
+      const unpaid = parseFloat(document.getElementById("unpaidAmount").value);
+      if (!name || isNaN(unpaid) || unpaid < 0) {
+        alert("يرجى إدخال اسم ومبلغ صحيح");
+        return;
+      }
+      people.push({ name, unpaid });
+      document.getElementById("personName").value = "";
+      document.getElementById("unpaidAmount").value = "";
+      updatePeopleList();
+    }
+
+    function updatePeopleList() {
+      const list = document.getElementById("peopleUl");
+      const container = document.getElementById("peopleList");
+      list.innerHTML = "";
+      people.forEach(p => {
+        const li = document.createElement("li");
+        li.textContent = `${p.name}: ${p.unpaid.toFixed(2)} جنيه`;
+        li.className = "bg-white px-3 py-1 rounded-lg shadow-sm";
+        list.appendChild(li);
+      });
+      container.classList.remove("hidden");
+    }
+
+    function calculate() {
+      const totalBill = parseFloat(document.getElementById("totalBill").value);
+      const output = document.getElementById("output");
+      output.innerHTML = "";
+      if (people.length === 0) {
+        output.innerHTML = `<div class="text-red-600 font-semibold">⚠️ أضف شخصاً أولاً</div>`;
+        return;
+      }
+      if (isNaN(totalBill) || totalBill < 0) {
+        output.innerHTML = `<div class="text-red-600 font-semibold">⚠️ أدخل قيمة صحيحة للفاتورة</div>`;
+        return;
+      }
+      const totalUnpaid = people.reduce((sum, p) => sum + p.unpaid, 0);
+      const difference = Math.abs(totalBill - totalUnpaid);
+      const share = difference / people.length;
+
+      const summary = `
+        <div class="bg-blue-100 rounded-lg p-4">
+          <p class="font-medium">📊 المجموع المتبقي: <strong>${totalUnpaid.toFixed(2)} جنيه</strong></p>
+          <p class="font-medium">🧮 الفرق: <strong>${difference.toFixed(2)} جنيه</strong></p>
+          <p class="font-medium">💧 حصة الفرد: <strong>${share.toFixed(2)} جنيه</strong></p>
+        </div>
+      `;
+
+      const rows = people.map(p => {
+        const due = p.unpaid + share;
+        return `
+          <tr class="border-b">
+            <td class="py-2 px-4">${p.name}</td>
+            <td class="py-2 px-4 text-center">${p.unpaid.toFixed(2)}</td>
+            <td class="py-2 px-4 text-center">${share.toFixed(2)}</td>
+            <td class="py-2 px-4 text-center font-semibold text-blue-700">${due.toFixed(2)}</td>
+          </tr>
+        `;
+      }).join("");
+
+      const table = `
+        <div>
+          <h3 class="text-lg font-bold mt-4 mb-2 text-gray-800">📌 المبلغ النهائي لكل شخص</h3>
+          <table class="w-full border border-gray-300 rounded-lg overflow-hidden text-sm">
+            <thead class="bg-blue-100">
+              <tr>
+                <th class="py-2 px-4 text-left">الاسم</th>
+                <th class="py-2 px-4 text-center">المتبقي</th>
+                <th class="py-2 px-4 text-center">الحصة</th>
+                <th class="py-2 px-4 text-center">الإجمالي</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+      `;
+
+      output.innerHTML = summary + table;
+      document.getElementById("downloadPdfBtn").classList.remove("hidden");
+    }
+
+    function resetAll() {
+      document.getElementById("personName").value = "";
+      document.getElementById("unpaidAmount").value = "";
+      document.getElementById("totalBill").value = "";
+      document.getElementById("peopleUl").innerHTML = "";
+      document.getElementById("peopleList").classList.add("hidden");
+      document.getElementById("output").innerHTML = "";
+      people.length = 0;
+      document.getElementById("downloadPdfBtn").classList.add("hidden");
+    }
+
+    function downloadPDF() {
+      html2pdf().from(document.getElementById("output")).save("فاتورة_المياه.pdf");
+    }
+  </script>
+</body>
+</html>
