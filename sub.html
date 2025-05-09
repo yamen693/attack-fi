@@ -1,0 +1,226 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attack Football Academy Subscription</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      direction: ltr;
+    }
+    h2 {
+      color: #e8b546;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    label {
+      margin-top: 15px;
+      display: block;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #e8b546;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d39b33;
+    }
+    .price-info {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .price-info p {
+      margin: 0;
+      font-size: 1.2em;
+      color: #333;
+    }
+    #success-message, #error-message {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    #success-message {
+      background-color: #28a745;
+      color: white;
+    }
+    #error-message {
+      background-color: #dc3545;
+      color: white;
+    }
+    .lang-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #e8b546;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="lang-toggle" onclick="toggleLanguage()">العربية</button>
+
+  <div class="form-container">
+    <h2 id="form-title">Attack Football Academy Subscription</h2>
+
+    <div class="price-info">
+      <p><strong id="price-label">Subscription Price:</strong> 800 EGP / Month</p>
+      <p><strong id="days-label">Days:</strong> 3 days per week</p>
+    </div>
+
+    <form id="subscription-form">
+      <label for="name" id="label-name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone" id="label-phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <label for="age" id="label-age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+
+      <label for="payment-method" id="label-payment">Payment Method:</label>
+      <select id="payment-method" required>
+        <option value="">-- Select --</option>
+        <option value="cash">Cash (when you arrive to the academy)</option>
+        <option value="visa">Visa</option>
+      </select>
+
+      <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    <div id="success-message">Form submitted successfully! We’ll contact you shortly.</div>
+    <div id="error-message">Error occurred. Please try again.</div>
+  </div>
+  <script>
+    const form = document.getElementById('subscription-form');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+  
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+  
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const age = document.getElementById('age').value;
+      const paymentMethod = document.getElementById('payment-method').value;
+  
+      const formData = {
+        name,
+        phone,
+        age,
+        paymentMethod
+      };
+  
+      fetch("https://formspree.io/f/xwpolgzp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          errorMessage.style.display = 'none';
+          form.reset();
+  
+          if (paymentMethod === 'visa') {
+            setTimeout(() => {
+              window.location.href = 'https://paymob.xyz/vvc3kcaB/';
+            }, 1500);
+          }
+        } else {
+          throw new Error("Form submission failed.");
+        }
+      })
+      .catch(() => {
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'block';
+      });
+    });
+  
+    // ترجمة اللغة
+    let currentLang = 'en';
+  
+    const translations = {
+      ar: {
+        'form-title': 'نموذج الاشتراك في أكاديمية أتاك لكرة القدم',
+        'price-label': 'سعر الاشتراك:',
+        'days-label': 'عدد الأيام:',
+        'label-name': 'الاسم الكامل:',
+        'label-phone': 'رقم الهاتف:',
+        'label-age': 'العمر:',
+        'label-payment': 'طريقة الدفع:',
+        'submit-btn': 'إرسال',
+        'lang-toggle': 'English',
+        'success-message': 'تم إرسال النموذج بنجاح! سيتم التواصل معكم قريبًا.',
+        'error-message': 'حدث خطأ أثناء الإرسال. حاول مرة أخرى.'
+      },
+      en: {
+        'form-title': 'Attack Football Academy Subscription',
+        'price-label': 'Subscription Price:',
+        'days-label': 'Days:',
+        'label-name': 'Full Name:',
+        'label-phone': 'Phone Number:',
+        'label-age': 'Age:',
+        'label-payment': 'Payment Method:',
+        'submit-btn': 'Submit',
+        'lang-toggle': 'العربية',
+        'success-message': 'Form submitted successfully! We’ll contact you shortly.',
+        'error-message': 'Error occurred. Please try again.'
+      }
+    };
+  
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  
+      for (let key in translations[currentLang]) {
+        const el = document.getElementById(key);
+        if (el) el.textContent = translations[currentLang][key];
+      }
+  
+      const toggleBtn = document.querySelector('.lang-toggle');
+      toggleBtn.textContent = translations[currentLang === 'en' ? 'ar' : 'en']['lang-toggle'];
+    }
+  </script>
+  
+
+</body>
+</html> -->

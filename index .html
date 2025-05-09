@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="auto">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -268,6 +268,7 @@ nav.scrolled {
        <header class="fixed top-0 left-0 w-full z-10 bg-transparent shadow-md">
         <div class="flex items-center justify-between p-4 transition-all duration-300 ease-in-out">
             <div class="flex items-center">
+                
                 <img alt="Attack Academy Logo" class="h-20 w-20 transition-transform duration-300 hover:scale-110" height="80" src="./attack (1).png" style="align-items: center;" width="80"/>
                 <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white ml-4">Attack Academy</h1>
 
@@ -276,7 +277,10 @@ nav.scrolled {
                 <div class="md:flex md:space-x-4 hidden" id="desktop-menu">
                     <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 space-x-6">
                         <li class="mr-4">
-                            <li><a href="#about"    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center"
+                            <li class="mr-4">
+                                <a    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="./index .html">الرئيسه</a>
+                            </li>
+                            <li><a href="index .html#about"    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center"
                                 data-section="about" >معلومات عنا</a></li>
                             <li><a href="#vision"    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center"
                                 data-section="vision">رؤيتنا</a></li>
@@ -285,9 +289,12 @@ nav.scrolled {
                             <li><a href="#programs"    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center"
                                 data-section="programs">برامجنا</a></li>
                         </li>
-                        <li     class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" >
+                        <!-- <li     class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" >
                             <a  href="./reels.html"> الريلز</a>
-                        </li>
+                        </li> -->
+                        <!-- <li     class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" >
+                            <a  href="sub.html"> أشترك </a>
+                        </li> -->
                         <li    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center">
                             <a  href="https://yamen693.github.io/attack-final/">تواصل معنا</a>
                         </li>
@@ -319,8 +326,9 @@ nav.scrolled {
         <div id="mobile-menu" class="hidden animate-slideDown ...">
 
             <ul class="flex flex-col space-y-2 p-4">
+              
                 <li class="mr-4">
-                    <a    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="./index.html">الرئيسه</a>
+                    <a    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="./index .html">الرئيسه</a>
                 </li>
                 <li>
                     <a   class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="#about">معلومات عنا</a>
@@ -334,9 +342,12 @@ nav.scrolled {
                 <li>
                     <a    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="#programs">برامجنا</a>
                 </li>
-                <li class="mr-4">
+                <!-- <li class="mr-4">
                     <a    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="./reels.html">الريلز </a>
-                </li>
+                </li> -->
+                <!-- <li class="mr-4">
+                    <a    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="sub.html">أشترك الان</a>
+                </li> -->
                 <li>
                     <a    class="block bg-yellow-400 text-black rounded-full px-4 py-2 text-center" href="https://yamen693.github.io/attack-final/">تواصل معنا</a>
                 </li>
@@ -498,7 +509,16 @@ nav.scrolled {
           </li>
         </ul>
       </div>
-      
+      <!-- Player of the Month Ad -->
+<div id="playerAd" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 z-50 hidden rounded-xl shadow-lg border border-white bg-white overflow-hidden">
+    <!-- Close Button -->
+    <button onclick="hideAd()" class="absolute top-1 right-1 text-white bg-black bg-opacity-60 rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold hover:bg-opacity-90 transition">
+      ✕
+    </button>
+    <!-- Player Photo -->
+    <img src="youssef nihad.jpeg" alt="Player of the Month" class="w-full h-17 object-cover" />
+  </div>
+  
       
       
     <footer class="bg-[rgb(232,181,70)] text-black py-6 px-4">
@@ -533,7 +553,7 @@ nav.scrolled {
             <div class="flex flex-wrap justify-center items-center gap-6">
               <img src="body.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
               <img src="Untitled copy.png" alt="Partner 2" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
-              <img src="./no bg nfchild.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
+              <!-- <img src="./no bg nfchild.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" /> -->
               <img src="WhatsApp-Image-2024-10-04-at-15.png" alt="Partner 1" class="w-24 md:w-28 h-auto object-contain hover:scale-105 transition-transform duration-300 ease-in-out" />
             </div>
           </div>
@@ -619,11 +639,34 @@ nav.scrolled {
 const mobileMenu = document.getElementById('mobile-menu');
 
 mobileBtn.addEventListener('click', () => {
-  // toggle the scaleY for a “slide down” effect
-  mobileMenu.classList.toggle('scale-y-100');
-  mobileMenu.classList.toggle('scale-y-0');
-});
+    // toggle the scaleY for a “slide down” effect
+    mobileMenu.classList.toggle('scale-y-100');
+    mobileMenu.classList.toggle('scale-y-0');
+  });
+  
+  
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("playerAd").classList.remove("hidden");
+      }, 5000); // Show after 5 seconds
+    });
+  
+    function hideAd() {
+      document.getElementById("playerAd").classList.add("hidden");
+    }
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === "F12" || 
+      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "C" || e.key === "J")) ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+    }
+  });
 
+  
+  
     </script>
     
     <script src="./index.js"></script>
